@@ -22,10 +22,3 @@ $RECYCLE.BIN/
 .env
 .env.*
 !.env.example
-wp-config.php
-
-# Copias completas y temporales de WordPress
-*.wpress
-wp-content/ai1wm-backups/
-wp-content/cache/
-wp-content/upgrade/
