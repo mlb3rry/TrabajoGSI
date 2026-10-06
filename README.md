@@ -1,67 +1,122 @@
 # Morilla Asociados Arquitectura y Diseño SL
 
-Proyecto de clase por el Grupo 6 de las 15:30 para el desarrollo de una página web corporativa del estudio **Morilla Asociados Arquitectura y Diseño SL**.
+Proyecto académico del Grupo 6, turno de las 15:30, para desarrollar una web corporativa del estudio **Morilla Asociados Arquitectura y Diseño SL**, en la asignatura GSI de la Universidad de Sevilla, curso 2026/2027.
 
-## Descripción
+## Objetivo y alcance inicial
 
-Este trabajo presenta una web orientada a mostrar la identidad del estudio, sus servicios y algunos proyectos de arquitectura y diseño. El objetivo principal es practicar el proceso completo de análisis, diseño y documentación de una web profesional.
+La web presentará la identidad del estudio, sus servicios y proyectos de arquitectura y diseño. El trabajo incluye análisis, diseño, implementación y documentación.
+
+Alcance inicial, pendiente de validar con los requisitos del proyecto:
+
+- Inicio con presentación del estudio.
+- Servicios de arquitectura y diseño.
+- Proyectos destacados.
+- Página de contacto. Su contenido y el funcionamiento de un posible formulario se definirán en los requisitos.
+
+## Entorno de trabajo actual
+
+Cada integrante tiene una instalación local de WordPress gestionada con WampServer. GitHub se utiliza para el control de versiones y Jira para organizar tareas y sprints. Las copias completas se exportan con All-in-One WP Migration en formato `.wpress`.
 
 
-## Contenido del repositorio
+## Organización del repositorio propuesta
 
-- `docs/`: documentación del proyecto (entrevistas, requisitos y UML).
-- `db/`: recursos y datos utilizados durante el desarrollo.
-- `README.md`: resumen general del trabajo.
+Actualmente se dispone de `docs/`, `db/`, `.gitignore` y `README.md`. Se propone renombrar `db/` a `backups/` y añadir documentación de sprints y pruebas cuando se utilice.
 
-## Instalación y puesta en marcha
+| Ruta | Contenido |
+| --- | --- |
+| `docs/entrevistas/` | Entrevistas y conclusiones. |
+| `docs/rem/` | Requisitos, manteniendo el nombre de carpeta actual. |
+| `docs/uml/` | Diagramas: archivo editable y exportación para consulta. |
+| `docs/sprints/` | Objetivos, acuerdos, revisiones y retrospectivas. |
+| `docs/pruebas/` | Comprobaciones y evidencias de aceptación. |
+| `backups/` | Registro de copias y ubicación de los archivos compartidos. Las copias locales se excluyen de Git. |
+| `.gitignore` | Exclusiones de archivos locales, temporales y credenciales. |
+| `README.md` | Guía general y acuerdos de trabajo. |
+
+Si se desarrolla código propio, definir una ruta para el tema hijo o plugin y documentar cómo copiarlo a la instalación local. No es necesario subir toda la instalación de WordPress.
+
+## Puesta en marcha local
 
 ### Requisitos
 
-- Visual Studio Code
-- Git
+- Git y un editor, por ejemplo Visual Studio Code.
+- WampServer instalado, con Apache y el servidor de base de datos activos.
+- Una instalación local de WordPress y las versiones acordadas por el grupo.
+- All-in-One WP Migration para restaurar las copias compartidas.
+- Acceso a la copia integrada que el grupo haya marcado como vigente.
 
-### Pasos de instalación
+### Obtener la documentación y el código
 
-1. Clonar el repositorio:
-	- `git clone <URL_DEL_REPOSITORIO>`
-2. Entrar en la carpeta del proyecto:
-	- `cd TrabajoGSI`
-3. Abrir el proyecto en VS Code.
+```bash
+git clone https://github.com/mlb3rry/TrabajoGSI.git
+cd TrabajoGSI
+```
 
-### Flujo de trabajo con Scrum y Jira
+### Preparar WordPress
 
-1. Crear una incidencia por tarea (Historia o Tarea Técnica) con responsable y criterios de aceptación.
-2. Mover cada incidencia por el tablero Jira:
-	- `Por hacer` → `En progreso` → `En revisión` → `Hecho`
-3. Vincular desarrollo con Jira:
-	- Crear rama con clave Jira: `feature/SCRUM-6-descripcion`
-	- Commit con clave Jira: `SCRUM-6: descripción breve`
-	- Abrir Pull Request enlazado a la incidencia.
+1. Iniciar WampServer y comprobar que sus servicios están activos.
+2. Crear una base de datos local para el proyecto.
+3. Instalar WordPress dentro de la carpeta `www` de WampServer; si se utiliza el directorio `wordpress`, la web estará en `http://localhost/wordpress/`.
+4. Completar la instalación con los datos de la base de datos local.
+5. Instalar All-in-One WP Migration y restaurar la copia integrada vigente según el apartado siguiente.
 
-## Acceso al panel de WordPress local
-* **URL:** http://localhost/wordpress/wp-admin
-* **Usuario y contraseña definida por privado**
+El panel estará en `http://localhost/wordpress/wp-admin/` si se mantiene ese nombre de directorio. Las credenciales se comunican por un canal privado; no se incluyen en el repositorio.
 
-## Cómo restaurar la web
-1. Instalar el plugin "All-in-One WP Migration" en local.
-2. Ir a Importar y seleccionar el archivo de la carpeta `db/`.
+## Restauración de una copia
 
-## Alcance funcional (resumen a cambiar)
+1. Confirmar qué copia integrada debe utilizarse en el registro de backups.
+2. Exportar una copia de seguridad de la instalación local si contiene trabajo que deba conservarse.
+3. En el panel de WordPress, acceder a **All-in-One WP Migration → Importar** y seleccionar el `.wpress` acordado.
+4. Revisar la advertencia antes de confirmar: la importación sustituye datos de la instalación de destino; no fusiona cambios de dos instalaciones.
+5. Al terminar, acceder con las credenciales correspondientes a la copia importada y revisar los enlaces permanentes si hay problemas de navegación.
+6. Comprobar inicio, servicios, proyectos, contacto, imágenes y acceso al panel.
 
-- Página de inicio con presentación del estudio.
-- Sección de servicios de arquitectura y diseño.
-- Sección de proyectos destacados.
-- Página de contacto.
+Registrar también la versión del plugin y las condiciones de importación utilizadas. Si una copia no puede importarse por su tamaño o por la configuración del entorno, resolverlo y documentarlo antes de distribuirla como base del sprint.
 
+## Convención de nombres para backups
+
+Formato:
+
+```text
+morillaasc_YYYY-MM-DD_HHMM_sNN_tipo_autor.wpress
+```
+
+- Fecha y hora de exportación en la zona `Europe/Madrid`, con formato de 24 horas.
+- `sNN`: sprint con dos dígitos; usar `s00` para la preparación inicial.
+- `tipo`: `local`, `integrada` o `entrega`.
+- `autor`: identificador único acordado por el grupo, en minúsculas, sin espacios ni tildes.
+
+| Tipo | Uso | Ejemplo ilustrativo |
+| --- | --- | --- |
+| `local` | Copia individual; no se considera base común. | `morillaasc_2026-10-06_1100_s00_local_angel.wpress` |
+| `integrada` | Copia con los cambios reunidos en la instalación de referencia y comprobados. | `morillaasc_2026-10-09_1800_s01_integrada_angel.wpress` |
+| `entrega` | Copia congelada para una entrega académica. | `morillaasc_2026-10-12_1200_s01_entrega_angel.wpress` |
+
+
+### Almacenamiento y registro
+
+Indicar expresamente qué copia `integrada` es la base vigente. Mantener las entregas y una copia integrada anterior comprobada para poder recuperar el proyecto. Una copia completa puede contener cuentas y otros datos de la web: no publiquen copias sin revisar su contenido.
+
+## Jira
+
+- Mantener `main` como versión revisada de la documentación y del código que se incluya en Git.
+- Crear una incidencia por historia o tarea técnica, con responsable y criterios de aceptación.
+- Crear ramas con la clave Jira: `feature/SCRUM-6-contacto`, `fix/SCRUM-8-menu` o `docs/SCRUM-9-requisitos`.
+- Incluir la clave en commits y títulos de pull request, por ejemplo `SCRUM-6: añadir página de contacto`.
+- Solicitar revisión de otro integrante antes de fusionar en `main`.
+- Enlazar la pull request desde Jira y la incidencia desde la descripción de la pull request. Esta trazabilidad manual funciona aunque no se haya configurado una integración automática.
+- Para tareas realizadas desde el panel de WordPress, añadir a Jira la evidencia y el método de integración; una pull request de documentación no demuestra por sí sola que la web se haya integrado.
+
+Flujo propuesto del tablero:
+
+```text
+Por hacer → En progreso → En revisión → Hecho
+```
 ## Estado
 
-Trabajo académico en desarrollo.
+Trabajo académico en desarrollo. Las secciones marcadas como propuestas deben validarse por el grupo; no describen configuraciones ya aplicadas.
 
-## Autoría
-
-Proyecto realizado para la asignatura GSI correspondiente del curso 26/27 de la Universidad de Sevilla.
-
-## Integrantes 
+## Integrantes
 
 - ALESANDRO JOAQUIN ACOSTA ALFEREZ
 - RAFAEL CAPITÁN DE LA TORRE
