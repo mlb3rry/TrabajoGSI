@@ -1,0 +1,16 @@
+# Ignorar núcleo de WordPress y configuraciones locales
+wp-config.php
+wp-admin/
+wp-includes/
+*.log
+.htaccess
+
+# Ignorar archivos pesados o temporales de WordPress
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+
+# Archivos del sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
