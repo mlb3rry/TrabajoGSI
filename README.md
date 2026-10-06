@@ -38,6 +38,14 @@ Este trabajo presenta una web orientada a mostrar la identidad del estudio, sus 
 	- Commit con clave Jira: `SCRUM-6: descripción breve`
 	- Abrir Pull Request enlazado a la incidencia.
 
+## Acceso al panel de WordPress local
+* **URL:** http://localhost/wordpress/wp-admin
+* **Usuario y contraseña definida por privado**
+
+## Cómo restaurar la web
+1. Instalar el plugin "All-in-One WP Migration" en local.
+2. Ir a Importar y seleccionar el archivo de la carpeta `db/`.
+
 ## Alcance funcional (resumen a cambiar)
 
 - Página de inicio con presentación del estudio.
