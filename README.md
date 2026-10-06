@@ -25,15 +25,10 @@ Actualmente se dispone de `docs/`, `db/`, `.gitignore` y `README.md`. Se propone
 | Ruta | Contenido |
 | --- | --- |
 | `docs/entrevistas/` | Entrevistas y conclusiones. |
-| `docs/rem/` | Requisitos, manteniendo el nombre de carpeta actual. |
+| `docs/rem/` | Requisitos, manteniendo el nombre de carpeta actual. Estructurado con REMUS. |
 | `docs/uml/` | Diagramas: archivo editable y exportación para consulta. |
-| `docs/sprints/` | Objetivos, acuerdos, revisiones y retrospectivas. |
-| `docs/pruebas/` | Comprobaciones y evidencias de aceptación. |
 | `backups/` | Registro de copias y ubicación de los archivos compartidos. Las copias locales se excluyen de Git. |
-| `.gitignore` | Exclusiones de archivos locales, temporales y credenciales. |
 | `README.md` | Guía general y acuerdos de trabajo. |
-
-Si se desarrolla código propio, definir una ruta para el tema hijo o plugin y documentar cómo copiarlo a la instalación local. No es necesario subir toda la instalación de WordPress.
 
 ## Puesta en marcha local
 
@@ -107,7 +102,7 @@ Indicar expresamente qué copia `integrada` es la base vigente. Mantener las ent
 - Enlazar la pull request desde Jira y la incidencia desde la descripción de la pull request. Esta trazabilidad manual funciona aunque no se haya configurado una integración automática.
 - Para tareas realizadas desde el panel de WordPress, añadir a Jira la evidencia y el método de integración; una pull request de documentación no demuestra por sí sola que la web se haya integrado.
 
-Flujo propuesto del tablero:
+Flujo del tablero:
 
 ```text
 Por hacer → En progreso → En revisión → Hecho
