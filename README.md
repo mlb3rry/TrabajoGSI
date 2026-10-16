@@ -54,6 +54,14 @@ cd TrabajoGSI
 3. Instalar WordPress dentro de la carpeta `www` de WampServer; si se utiliza el directorio `wordpress`, la web estará en `http://localhost/wordpress/`.
 4. Completar la instalación con los datos de la base de datos local.
 5. Instalar All-in-One WP Migration y restaurar la copia integrada vigente según el apartado siguiente.
+6. Haz clic izquierdo en el icono verde de WampServer en la barra de tareas, entra en el submenú PHP y haz clic sobre php.ini.
+7. Dentro del archivo de texto, presiona Ctrl + B (o Ctrl + F) para buscar y modificar las siguientes cuatro directivas:
+   upload_max_filesize = 512M
+  post_max_size = 512M
+  memory_limit = 256M
+  max_execution_time = 300
+8. Guarda los cambios con Ctrl + G y cierra el archivo.
+9. Vuelve a hacer clic izquierdo en el icono de WampServer y selecciona Restart All Services (o Reiniciar todos los servicios).
 
 El panel estará en `http://localhost/wordpress/wp-admin/` si se mantiene ese nombre de directorio. Las credenciales se comunican por un canal privado; no se incluyen en el repositorio.
 
