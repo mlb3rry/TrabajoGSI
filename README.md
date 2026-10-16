@@ -57,9 +57,9 @@ cd TrabajoGSI
 6. Haz clic izquierdo en el icono verde de WampServer en la barra de tareas, entra en el submenú PHP y haz clic sobre php.ini.
 7. Dentro del archivo de texto, presiona Ctrl + B (o Ctrl + F) para buscar y modificar las siguientes cuatro directivas:
    upload_max_filesize = 512M
-  post_max_size = 512M
-  memory_limit = 256M
-  max_execution_time = 300
+   post_max_size = 512M
+   memory_limit = 256M
+   max_execution_time = 300
 8. Guarda los cambios con Ctrl + G y cierra el archivo.
 9. Vuelve a hacer clic izquierdo en el icono de WampServer y selecciona Restart All Services (o Reiniciar todos los servicios).
 
