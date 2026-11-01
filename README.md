@@ -15,7 +15,7 @@ Alcance inicial, pendiente de validar con los requisitos del proyecto:
 
 ## Entorno de trabajo actual
 
-Cada integrante tiene una instalación local de WordPress gestionada con WampServer. GitHub se utiliza para el control de versiones y Jira para organizar tareas y sprints. Las copias completas se exportan con All-in-One WP Migration en formato `.wpress`.
+Cada integrante tiene una instalación local de WordPress gestionada con WampServer. GitHub se utiliza para el control de versiones y Jira para organizar tareas y sprints. Las copias completas se exportan con All-in-One WP Migration en formato `.wpress` y se publican como archivos adjuntos en la [página de Releases de GitHub](https://github.com/mlb3rry/TrabajoGSI/releases).
 
 
 ## Organización del repositorio propuesta
@@ -27,7 +27,7 @@ Actualmente se dispone de `docs/`, `db/`, `.gitignore` y `README.md`. Se propone
 | `docs/entrevistas/` | Entrevistas y conclusiones. |
 | `docs/rem/` | Requisitos, manteniendo el nombre de carpeta actual. Estructurado con REMUS. |
 | `docs/uml/` | Diagramas: archivo editable y exportación para consulta. |
-| `backups/` | Registro de copias y ubicación de los archivos compartidos. Las copias locales se excluyen de Git. |
+| `backups/` | Registro de copias y referencia a los archivos compartidos en la [página de Releases de GitHub](https://github.com/mlb3rry/TrabajoGSI/releases). Las copias `.wpress` no se almacenan directamente en Git. |
 | `README.md` | Guía general y acuerdos de trabajo. |
 
 ## Puesta en marcha local
@@ -38,7 +38,7 @@ Actualmente se dispone de `docs/`, `db/`, `.gitignore` y `README.md`. Se propone
 - WampServer instalado, con Apache y el servidor de base de datos activos.
 - Una instalación local de WordPress y las versiones acordadas por el grupo.
 - All-in-One WP Migration para restaurar las copias compartidas.
-- Acceso a la copia integrada que el grupo haya marcado como vigente.
+- Acceso a Internet para descargar la copia vigente desde la [página de Releases de GitHub](https://github.com/mlb3rry/TrabajoGSI/releases).
 
 ### Obtener la documentación y el código
 
@@ -53,7 +53,7 @@ cd TrabajoGSI
 2. Crear una base de datos local para el proyecto.
 3. Instalar WordPress dentro de la carpeta `www` de WampServer; si se utiliza el directorio `wordpress`, la web estará en `http://localhost/wordpress/`.
 4. Completar la instalación con los datos de la base de datos local.
-5. Instalar All-in-One WP Migration y restaurar la copia integrada vigente según el apartado siguiente.
+5. Instalar All-in-One WP Migration y descargar de la [página de Releases de GitHub](https://github.com/mlb3rry/TrabajoGSI/releases) la copia integrada vigente, según el apartado siguiente.
 6. Haz clic izquierdo en el icono verde de WampServer en la barra de tareas, entra en el submenú PHP y haz clic sobre php.ini.
 7. Dentro del archivo de texto, presiona Ctrl + B (o Ctrl + F) para buscar y modificar las siguientes cuatro directivas:
    upload_max_filesize = 512M
@@ -67,12 +67,13 @@ El panel estará en `http://localhost/wordpress/wp-admin/` si se mantiene ese no
 
 ## Restauración de una copia
 
-1. Confirmar qué copia integrada debe utilizarse en el registro de backups.
+1. Consultar la [página de Releases de GitHub](https://github.com/mlb3rry/TrabajoGSI/releases) y confirmar qué copia integrada debe utilizarse como base vigente.
 2. Exportar una copia de seguridad de la instalación local si contiene trabajo que deba conservarse.
-3. En el panel de WordPress, acceder a **All-in-One WP Migration → Importar** y seleccionar el `.wpress` acordado.
-4. Revisar la advertencia antes de confirmar: la importación sustituye datos de la instalación de destino; no fusiona cambios de dos instalaciones.
-5. Al terminar, acceder con las credenciales correspondientes a la copia importada y revisar los enlaces permanentes si hay problemas de navegación.
-6. Comprobar inicio, servicios, proyectos, contacto, imágenes y acceso al panel.
+3. Descargar el archivo `.wpress` acordado desde la Release correspondiente.
+4. En el panel de WordPress, acceder a **All-in-One WP Migration → Importar** y seleccionar el `.wpress` descargado.
+5. Revisar la advertencia antes de confirmar: la importación sustituye datos de la instalación de destino; no fusiona cambios de dos instalaciones.
+6. Al terminar, acceder con las credenciales correspondientes a la copia importada y revisar los enlaces permanentes si hay problemas de navegación.
+7. Comprobar inicio, servicios, proyectos, contacto, imágenes y acceso al panel.
 
 Registrar también la versión del plugin y las condiciones de importación utilizadas. Si una copia no puede importarse por su tamaño o por la configuración del entorno, resolverlo y documentarlo antes de distribuirla como base del sprint.
 
@@ -98,7 +99,7 @@ morillaasc_YYYY-MM-DD_HHMM_sNN_tipo_autor.wpress
 
 ### Almacenamiento y registro
 
-Indicar expresamente qué copia `integrada` es la base vigente. Mantener las entregas y una copia integrada anterior comprobada para poder recuperar el proyecto. Una copia completa puede contener cuentas y otros datos de la web: no publiquen copias sin revisar su contenido.
+Indicar expresamente en la Release correspondiente qué copia `integrada` es la base vigente. Mantener las entregas y una copia integrada anterior comprobada en la [página de Releases de GitHub](https://github.com/mlb3rry/TrabajoGSI/releases) para poder recuperar el proyecto. Una copia completa puede contener cuentas y otros datos de la web: no publiquen copias sin revisar su contenido.
 
 ## Jira
 
